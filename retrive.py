@@ -21,12 +21,13 @@ s3_client = boto3.client(
 
 #make name work later
 name = "WCCs.jpeg"
+outname = name.split(".")[0] +".txt"
 
 
 response1 = s3_client.download_file(
         "output-hack",
-        name+"txt",
-        "/home/liam/Hackathon/"+name+".txt"
+        "test.txt",
+        "/home/liam/Hackathon/"+outname
 )
 
-subprocess.run(["cat", name+".txt"])
+subprocess.run(["cat", outname])
